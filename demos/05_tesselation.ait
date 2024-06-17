@@ -1,0 +1,130 @@
+# Convenience
+bW: 200 ;
+bH: 200 ;
+cX: 100 ;
+cY: 100 ;
+bW/2: bW 2 / ;
+bH/2: bH 2 / ;
+
+PI/2: PI 2 / ;
+PI/4: PI 4 / ;
+
+# Fishdrawing
+fishpath: "M74.2 59.6C103 141 117 148.4 214 184.4m-50.2 9.2c33.2-4.8 54-2 87.2 6.4m-150-50c24.4 11.2 40.4 23.6 62.8 43.6M51 200l50-50M1 150l50 50M1 150c11.2-24.4 23.6-40.4 43.6-62.8m0 0C62 129 67 134 101 150M44.6 87.2C39.8 54 42.6 33.2 51 0m0 0c20.8 12.4 32.6 21.4 46.8 40.4M97.8 40.4c26.8 29.6-.4 51.6 28.6 84.2m0 0C131 130 141 140 151 150m0 0c17.8 6.6 32 8.4 53.2 9.6m0 0c14.2 19 26 28 46.8 40.4M97.8 40.4c21.2 1.2 35.4 3 53.2 9.6m0 0v50m0 0-24.6 24.6M114 58c12.6-4.4 22.2-3.2 34.4 3.6M119 79c12-7.4 19-8.4 29.8-4.2M120.6 99.6c10.4-12.4 14.8-13.2 28.2-12.2m-7.6 29c2.8 3.6 5.8 6.6 7.8 7.4m-13.8-1.4C139 130 142 133 149.4 135M17 152.6c9-23.6 21-33.6 34.4-39.8m-24.6 49.6C39 140 45 134 59 125m-19.6 50C49 152 57 144 71 135.8m-24.4 51.6C63 160 71 152 83 143.6M61.6 68.4c4.4-3.8 6.4-5.8 9-8.4m-9 8.4c-2.2-10.4-2.2-20.4 0-32.2m0 0c6.4 1.4 7.8 13.4 9 23.8m6.4-3.6c4-2.4 9-5.4 11.4-6.8M77 56.4C73 41 73 38 73.4 31m0 0c7.6 8 12 13 15 18.6" path2D;
+fish: -51 0 translate fishpath strokePath ;
+
+# Triangle
+triangle:
+  save
+  25 -25 translate
+  1 -1 scale
+  0 -200 translate
+  beginPath
+  [0 0] moveTo
+  [75 150] lineTo
+  [150 0] lineTo
+  closePath
+  stroke
+  restore
+;
+
+box:
+  beginPath
+  [0 0] moveTo
+  [200 0] lineTo
+  [200 200] lineTo
+  [0 200] lineTo
+  closePath
+  stroke
+;
+
+letterF:
+  50 25 translate
+  beginPath
+  [0 0] moveTo
+  [100 0] lineTo
+  [100 20] lineTo
+  [20 20] lineTo
+  [20 60] lineTo
+  [80 60] lineTo
+  [80 80] lineTo
+  [20 80] lineTo
+  [20 150] lineTo
+  [0 150] lineTo
+  closePath
+  stroke
+;
+
+# My drawing
+draw:
+  save
+  box
+  triangle
+  restore
+;
+
+# Modifiers
+toss:
+  bW/2 2 sqrt * bW /
+  dup scale
+  PI/4 neg rotate
+;
+
+turn:
+  cX cY translate
+  PI/2 * neg rotate
+  bW/2 neg bH/2 neg translate
+;
+
+turn0: 0 turn ;
+turn1: 1 turn ;
+turn2: 2 turn ;
+turn3: 3 turn ;
+
+flip:
+  -1 1 scale
+  bW neg 0 translate
+;
+
+ttile:
+  save draw restore
+  save flip toss draw restore
+  save turn3 flip toss draw restore
+;
+
+utile:
+  save turn0 flip toss draw restore
+  save turn1 flip toss draw restore
+  save turn2 flip toss draw restore
+  save turn3 flip toss draw restore
+;
+
+# Board locations
+NW: 0 0 translate ;
+SW: 0 2 bH * translate ;
+SE: 2 bW * 2 bH * translate ;
+NE: 2 bW * 0 translate ;
+
+N: bW 0 translate ;
+E: 2 bW * bH translate ;
+S: bW 2 bH * translate ;
+W: 0 bH translate ;
+
+C: bW bH translate ;
+
+# Program
+
+"hotpink" strokeStyle
+2 lineWidth
+
+save SW draw restore
+save SE draw restore
+save NE draw restore
+save NW draw restore
+
+save S draw restore
+save E draw restore
+save N draw restore
+save W draw restore
+
+save C draw restore

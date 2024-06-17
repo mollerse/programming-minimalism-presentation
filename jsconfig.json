@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "checkJs": true, // Skrur på TS-sjekking av all JS-kode
+    "strict": true, // Skrur på strict (no anys) sjekking
+    "module": "NodeNext", // Trengs for å få riktig syntax-level på JS-filer
+    "target": "ES2022", // Trengs for å få riktig syntax-level på JS-filer
+    "moduleResolution": "NodeNext" // Trengs for å resolve exports-feltet til riktig typedef
+  },
+  "include": ["src/**/*", "lib/**/*"],
+  // Exclude ting som blir included av include
+  "exclude": []
+}

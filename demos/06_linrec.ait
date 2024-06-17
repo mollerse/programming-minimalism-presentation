@@ -1,0 +1,8 @@
+factorial: [zero] [succ] [dup pred] [*] linrec ;
+
+quicksort:
+  [ small ] []
+  [ uncons [>] split ]
+  [ enconcat ]
+  binrec
+;

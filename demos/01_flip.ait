@@ -1,0 +1,54 @@
+# Convenience
+bW: 200 ;
+bH: 200 ;
+cX: 100 ;
+cY: 100 ;
+
+bW/2: bW 2 / ;
+bH/2: bH 2 / ;
+
+PI/2: PI 2 / ;
+PI/4: PI 4 / ;
+
+# Shapes
+box:
+  beginPath
+  [0 0] moveTo
+  [200 0] lineTo
+  [200 200] lineTo
+  [0 200] lineTo
+  closePath
+  stroke
+;
+
+letterF:
+  50 25 translate
+  beginPath
+  [0 0] moveTo
+  [100 0] lineTo
+  [100 20] lineTo
+  [20 20] lineTo
+  [20 60] lineTo
+  [80 60] lineTo
+  [80 80] lineTo
+  [20 80] lineTo
+  [20 150] lineTo
+  [0 150] lineTo
+  closePath
+  stroke
+;
+
+# Operations
+
+flip:
+  -1 1 scale
+  bW neg 0 translate
+;
+
+# Program
+"hotpink" strokeStyle
+2 lineWidth
+
+300 bW/2 - 300 bH/2 - translate
+save box restore
+save letterF restore

@@ -1,0 +1,105 @@
+# Convenience
+bW: 200 ;
+bH: 200 ;
+cX: 100 ;
+cY: 100 ;
+
+bW/2: bW 2 / ;
+bH/2: bH 2 / ;
+
+PI/2: PI 2 / ;
+PI/4: PI 4 / ;
+
+# Shapes
+box:
+  beginPath
+  [0 0] moveTo
+  [200 0] lineTo
+  [200 200] lineTo
+  [0 200] lineTo
+  closePath
+  stroke
+;
+
+letterF:
+  50 25 translate
+  beginPath
+  [0 0] moveTo
+  [100 0] lineTo
+  [100 20] lineTo
+  [20 20] lineTo
+  [20 60] lineTo
+  [80 60] lineTo
+  [80 80] lineTo
+  [20 80] lineTo
+  [20 150] lineTo
+  [0 150] lineTo
+  closePath
+  stroke
+;
+
+draw:
+  save box restore
+  save letterF restore
+;
+
+# Operations
+
+flip:
+  -1 1 scale
+  bW neg 0 translate
+;
+
+turn:
+  cX cY translate
+  PI/2 * neg rotate
+  bW/2 neg bH/2 neg translate
+;
+
+turn0: 0 turn ;
+turn1: 1 turn ;
+turn2: 2 turn ;
+turn3: 3 turn ;
+
+toss:
+  bW/2 2 sqrt * bW /
+  dup scale
+  PI/4 neg rotate
+;
+
+# Tiles
+
+# over(
+#   draw,
+#   over(
+#     flip(toss(draw)),
+#     turn(turn(turn(flip(toss(draw))))))
+ttile:
+  save draw restore
+  save flip toss draw restore
+  save turn3 flip toss draw restore
+;
+
+# over(
+#  over(
+#    flip(toss(draw)),
+#    turn(flip(toss(draw)))),
+#  over(
+#    turn(turn(flip(toss(draw)))),
+#    turn(turn(turn(flip(toss(draw))))))
+utile:
+  save turn0 flip toss draw restore
+  save turn1 flip toss draw restore
+  save turn2 flip toss draw restore
+  save turn3 flip toss draw restore
+;
+
+# Program
+
+center: 300 bW/2 - 300 bH/2 - translate ;
+
+"hotpink" strokeStyle
+2 lineWidth
+
+center
+draw
