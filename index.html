@@ -26,6 +26,15 @@
 
       body {
         aspect-ratio: 16/9;
+        width: 100vw !important;
+        height: calc((9 / 16) * 100vw) !important;
+      }
+      /* Landscape */
+      @media (min-aspect-ratio: 16/9) {
+        body {
+          height: 100vh !important;
+          width: calc((16 / 9) * 100vh) !important;
+        }
       }
       /* Reveal.js styles */
       :root {
@@ -34,7 +43,7 @@
         --accent-color: hotpink;
         --main-font: "DejaVu Sans", Helvetica, sans-serif;
         --font-weight: 300;
-        --font-size: 3em;
+        --font-size: calc(var(--scale, 1) * 3em);
         --r-main-font-size: var(--font-size);
         --r-background-color: var(--background-color);
         --r-main-font: var(--main-font);
@@ -149,6 +158,10 @@
         margin-bottom: 0 !important;
       }
 
+      .no-spacing p {
+        margin: 0;
+      }
+
       ait-slide {
         width: 100%;
         height: 100%;
@@ -205,228 +218,338 @@
         <section class="center">
           <h1>In praise of<br />programming<br />minimalism</h1>
           <p class="small">Stian Veum Møllersen / @mollerse</p>
-          <p class="small">Copenhagen Developers Festival 2024</p>
+          <p class="small">#HelloStavanger 2024</p>
         </section>
-        <!-- Hello -->
+        <!-- Hei -->
         <section class="standard">
-          <h2>Hello!</h2>
+          <h2>Hei!</h2>
           <div>
-            <p>My name is Stian. I work as a newsroom developer at NRK.</p>
+            <p>Jeg heter Stian og jobber i Visuelle Historier i NRK.</p>
             <p class="fragment">
-              In my spare time I like to tinker with (weird) programming languages and creative
-              programming.
+              Som vil si at jeg jobber med redaksjonelt innhold på web; langlesing, interaktivt
+              innhold, datakverning etc.
             </p>
-            <p class="fragment small">(I guess Dylan's Venn-diagram has some overlap after all.)</p>
           </div>
         </section>
-        <!-- Minimalism -->
+        <!-- Språk -->
         <section class="standard">
-          <h2>Programming Minimalism</h2>
+          <h2>Språk</h2>
           <div>
             <p>
-              Sometimes programming is to us as water is to the goldfish. It's easy to take things
-              for granted. Or get stuck in thinking we've solved it.
+              Jeg er veldig glad i språk. Både konstruerte, som de vi bruker til programmering, og
+              naturlige språk.
             </p>
             <p class="fragment">
-              A little careful consideration and exploration is both fun and neccessary every now
-              and then.
+              Så det at jeg jobber med redaksjonelt innhold til web passer meg ganske bra.
             </p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Språk</h2>
+          <div>
+            <p>Som utviklere er vi omgitt av språk på alle kanter.</p>
+            <p class="fragment">
+              Noen ganger blir språket vi velger å uttrykke oss i når vi programmerer som vann for
+              en gullfisk.
+            </p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Språk</h2>
+          <div>
+            <p>
+              Men det er mye spennende innsikt å hente ved å bruke litt tid til å reflektere over
+              språket vi bruker.
+            </p>
+            <p class="fragment">Vil dere høre en funfact om honning?</p>
+            <p class="fragment small">Klart dere vil, for dere har ikke noe valg.</p>
+            <p class="fragment smaller">(Jeg burde strengt tatt kalt det en arti-fakta)</p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Honning</h2>
+          <div>
+            <p>
+              Nesten samtlige språk i Europa har et ord for honning som stammer fra ett av 2/3
+              eldgamle ord: *médʰu/*mélit og *kn̥h₂ónks.
+            </p>
+            <p class="fragment">miel🇫🇷🇪🇸, mel 🇵🇹, miele🇮🇹, mil🏴󠁧󠁢󠁳󠁣󠁴󠁿🇮🇪, méli🇬🇷</p>
+            <p class="fragment">med🇷🇸🇧🇦🇭🇷🇲🇪🇸🇮🇲🇰🇧🇬🇺🇦, miód🇵🇱, mjod🇷🇺, medus🇱🇻🇱🇹</p>
+            <p class="fragment">honey🇬🇧, honning🇳🇴🇩🇰, honung🇸🇪, honing🇳🇱🇧🇪, honig🇩🇪</p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Honning</h2>
+          <div>
+            <p>
+              Dette er utrolig fascinerende. Hvorfor er ordene så like? Hvorfor bruker de germanske
+              språkene en annen variant enn romance og slavisk?
+            </p>
+            <p class="fragment">
+              Honning har vært en del av menneskehetens verden i veldig lang tid, så de trengte et
+              ord for det veldig tidlig.
+            </p>
+            <p class="fragment">
+              Men på et eller annet tidspunkt valgte noen å henvise til honning basert på farge og
+              ikke smak.
+            </p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Språk</h2>
+          <div>
+            <p>Språk reflekterer verdensbilde.</p>
+            <p class="fragment">Dette gjelder óg i aller høyeste grad programmeringspråk.</p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Språk</h2>
+          <div>
+            <p>
+              På samme måte som vi grupperer de naturlige språkene i familier, grupperer vi
+              programmeringspråk etter paradigme.
+            </p>
+            <p class="fragment">germansk/romance/slavisk ~ OO/funksjonell/prosedyre</p>
             <p class="fragment small">
-              (As well as reminding ourselves
-              <a href="https://www.youtube.com/watch?v=DCbGM4mqEVw">«what water is»</a>.)
+              (vi kan tilogmed utvide metaforen til å inkludere Finno-Ugrisk og logisk
+              programmering.)
+            </p>
+            <p class="fragment smaller">(Finsk og Prolog har litt samme vibes.)</p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Abstraksjon og begreper</h2>
+          <div>
+            <p>Med en gang vi har et begrep for noe blir det enklere å snakke om og tenke på.</p>
+            <p class="fragment">
+              «Hygge» omfatter mange forskjellige følelser og sammenhenger. Naturlig for en
+              Skandinav, mystisk for en Brite.
+            </p>
+          </div>
+        </section>
+        <section class="center">
+          <blockquote>
+            «A language that doesn't affect the way you think about programming is not worth
+            knowing.»
+          </blockquote>
+          <p>&mdash;Alan Perlis</p>
+        </section>
+        <!-- Perlis-språk -->
+        <section class="standard">
+          <h2>Perlis-språk</h2>
+          <div>
+            <p>Svensk for en Norsktalende er litt som C# for en Java-utvikler.</p>
+            <p class="fragment">
+              Hvis målet er å få en ny verdensforståelse og nye begreper bør vi kanskje sikte litt
+              lengre vekk.
             </p>
           </div>
         </section>
         <section class="standard">
-          <h2>Programming Minimalism</h2>
+          <h2>Perlis-språk</h2>
+          <div>
+            <p>Det er alltid fristende å oppsøke det som <em>ser</em> mest annerledes ut.</p>
+            <p class="fragment">
+              Forskjell i syntax betyr ikke nødvendigvis forskjell i semantikk.
+            </p>
+          </div>
+        </section>
+        <section class="center">
+          <blockquote>
+            «Beware of the Turing tar-pit in which everything is possible but nothing of interest is
+            easy.»
+          </blockquote>
+          <p>&mdash;Alan Perlis</p>
+        </section>
+        <section class="standard">
+          <h2>«The Turing Tar-pit»</h2>
           <div>
             <p>
-              Minimalism at it's core isn't about owning the fewest things. Even if you could do it.
+              Det er fristende å oppsøke de snåleste programmeringspråkene med den mest
+              ugjennomtrengelige syntaksen.
             </p>
             <p class="fragment">
-              And therefore I'm not going to Marie Kondo your favorite<sup>TM</sup> PL or try to
-              convince you that there is some PL out there that is more virtuous for some measure of
-              virtue.
+              Under syntaxen er det ikke nødvendigvis så fryktelig mye spennende.
             </p>
-            <p class="fragment small">(Code is immaterial, it would be pointless.)</p>
-            <p class="fragment smaller">(You'll get that pun later)</p>
+            <p class="fragment">
+              Når du først forstår hva en stack machine gjør er det ikke så spennende at syntaxen
+              kun består av forskjellige whitespaces.
+            </p>
           </div>
         </section>
         <section class="standard">
-          <h2>Programming Minimalism</h2>
+          <h2>Perlis-språk</h2>
+          <div>
+            <p>Vi trenger en annen heurestikk for å finne et interessant språk.</p>
+            <p class="fragment">
+              Vi trenger programmeringsverdenens Baskisk, Europas eneste isolerte språk.
+            </p>
+            <p class="fragment">(Honning på Baskisk er forøvrig <em>ezti</em>.)</p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Perlis-språk</h2>
+          <div>
+            <p>Vi trenger et språk med interessant semantikk.</p>
+            <p class="fragment">
+              Et språk med et annet verdensbilde enn de etablerte språkfamiliene.
+            </p>
+          </div>
+        </section>
+        <!-- Konkatenative språk -->
+        <section class="center">
+          <h3>Konkatenativ programmering</h3>
+        </section>
+        <section class="standard">
+          <h2>Konkatenativ programmering</h2>
           <div>
             <p>
-              Just like we would examine our lives and ask ourselves which things we value and that
-              have a positive impact on our life.
+              En familie med språk hvor den primære operasjonen for å konstruere programmer er
+              komposisjon gjennom jukstaposisjon.
             </p>
             <p class="fragment">
-              We could examine our PLs and ask ourselves which parts we value and which parts have a
-              positive impact on our programs.
-            </p>
-            <p class="fragment small">(«Dear <code>undefined</code> what is your value?»)</p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Programming Minimalism</h2>
-          <div>
-            <p>And to truly answer that question we would have to take away all the things!</p>
-            <p class="fragment small">(Remember to laugh menacingly)</p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Programming minimalism</h2>
-          <div>
-            <p>No, but really. Taking things away teaches us about their value.</p>
-            <p class="fragment">
-              Even if the point isn't wether we can do without it, taking the time to consider each
-              piece of the big puzzle is an intresting mental exercise in itself.
+              Med andre ord: Vi setter funksjoner ved siden av hverandre i en sekvens og kaller det
+              komposisjon.
             </p>
           </div>
         </section>
         <section class="standard">
-          <h2>Programming minimalism</h2>
+          <h2>Konkatenativ programmering</h2>
           <div>
-            <p>Also, satisfying your own curiosity is a perfectly valid reason to do something.</p>
-            <p class="fragment small">
-              (You might end up
-              <a href="https://worrydream.com/refs/Mermin_1999_-_How_Not_to_Create_Tigers.pdf"
-                >making a tiger</a
-              >, which is a pretty cool thing to do.)
-            </p>
+            <p>For å illustrere med litt kode:</p>
+            <p></p>
+            <pre><code data-trim data-noescape class="language-js">
+              f(g())
+              // eller
+              pipe(g, f)
+              // eller
+              g |> f
+            </code></pre>
+            <div class="fragment">
+              <p>blir:</p>
+              <p></p>
+              <pre><code data-trim data-noescape>g f</code></pre>
+            </div>
           </div>
         </section>
-        <!-- Syntax & Semantics -->
+        <section>
+          <ait-slide demo="triangles">
+            <div class="editor"></div>
+            <div class="display canvas"></div>
+          </ait-slide>
+        </section>
         <section class="standard">
-          <h2>Syntax & Semantics</h2>
+          <h2>Komposisjon</h2>
           <div>
             <p>
-              If we're going to be taking apart a PL, we need to have some idea of what a PL is made
-              up of; enter syntax and semantics.
+              Hva er egentlig forskjellen på komposisjon gjennom jukstaposisjon og point-free
+              komposisjon vi finner i mange andre språk?
             </p>
-            <p class="fragment">Syntax dictates the form of a progam.</p>
-            <p class="fragment">Semantics dictates the meaning of a program.</p>
+            <div class="fragment">
+              <p></p>
+              <pre><code data-trim data-noescape class="language-js">
+                g |> f
+                // eller
+                g . f
+              </code></pre>
+            </div>
+            <p class="fragment">
+              Forskjellen åpenbarer seg når vi ser på komposisjon av funksjoner som har
+              ikke-kompatible signaturer.
+            </p>
           </div>
         </section>
         <section class="standard">
-          <h2>Syntax & semantics</h2>
+          <h2>Komposisjon</h2>
           <div>
-            <p>Consider programs from two different languages:</p>
-            <p class="small">&lt;js&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="5" class="language-js">
-              function someFunction() {
-                return 1;
-              }
-
-              someFunction // => [Function: someFunction]
+            <p>La oss si at vi har to funksjoner:</p>
+            <p></p>
+            <pre><code data-trim data-noescape data-line-numbers>
+              fnA: (a: string) => string
+              fnB: (a: string, b: string) => string
             </code></pre>
-            <p class="small">&lt;F#&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="3" class="language-fsharp">
-              let someFunction = 1
-
-              someFunction // => 1
-            </code></pre>
-            <p class="fragment">Syntactically similar, but differing semantics.</p>
+            <p class="fragment">
+              <code>fnB</code> kan enkelt komponeres med <code>fnA</code>, men ikke omvendt.
+            </p>
+            <div class="fragment">
+              <p></p>
+              <pre><code data-trim data-noescape data-line-numbers>
+                # (string, string) => string
+                fn = fnB |> fnA
+              </code></pre>
+            </div>
+            <div class="fragment">
+              <p></p>
+              <pre><code data-trim data-noescape data-line-numbers>
+                # string => string
+                fn = fnA |> (fnB "str")
+              </code></pre>
+            </div>
           </div>
         </section>
         <section class="standard">
-          <h2>Syntax & semantics</h2>
-          <div>
-            <p>Consider programs from two different languages:</p>
-            <p class="small">&lt;js&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="5" class="language-js">
-              function someFunction() {
-                return 1;
-              }
-
-              someFunction() // => 1
-            </code></pre>
-            <p class="small">&lt;F#&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="3" class="language-fsharp">
-              let someFunction = 1
-
-              someFunction // => 1
-            </code></pre>
-            <p>Semantically similar, but differing syntax.</p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Syntax & Semantics</h2>
+          <h2>Komposisjon</h2>
           <div>
             <p>
-              Syntax and semantics are deeply interconnected. If you want a thing to have a
-              different behavior in a different context you usually reach for syntax to make that
-              happen.
+              Hvordan skal du løse dette i et språk som kun tillater komposisjon gjennom
+              jukstaposisjon?
             </p>
-            <p class="fragment">
-              And especially in PLs, where relying purely on contextual information is highly
-              impractical.
-            </p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Aside: Semiotics</h2>
-          <div>
-            <p class="small">&lt;js&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers class="language-js">
-              class Dog() extends Animal {
-                speak() {
-                  return 'Bark!'
-                }
+            <p class="fragment">Trikset er å gjøre alle funksjoner kompatible.</p>
+            <div class="fragment">
+              <p></p>
+              <pre><code data-trim data-noescape data-line-numbers>
+                // Hva er T? We don't know.
+                fnA: (a: T) => T
+                fnB: (a: T) => T
 
-                isGoodBoy() {
-                  return true
-                }
-              }
-
-              let jølle = new Dog()
-              jølle.speak() // => 'Bark!'
-              jølle.isGoodBoy() // => true
-            </code></pre>
-            <p class="fragment">
-              Eventhough <code>jølle</code> is a dog in this program, <code>jølle</code> isn't
-              actually <em>a dog</em>.
+                fn = fnA |> fnB
+              </code></pre>
+            </div>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Alt er funksjoner</h2>
+          <div>
+            <p>
+              Nå er utfordringen å finne en form på <code>T</code> som lar oss oppnå det samme som
+              før.
             </p>
-            <p class="fragment small">
-              (<a href="https://en.wikipedia.org/wiki/The_Treachery_of_Images"
-                >«This is not a pipe»</a
-              >
-              and all that.)
+            <p class="fragment">
+              <code>T</code> må være noe vi kan skrive og lese data fra, men som ikke har for mange
+              ulemper ved seg.
             </p>
           </div>
         </section>
         <section class="standard">
-          <h2>Aside: Semiotics</h2>
+          <h2>Alt er funksjoner</h2>
           <div>
-            <p><code>jølle</code> is an abstract representation of a dog. A symbol if you will.</p>
-            <p class="fragment">
-              We only interpret <code>jølle</code> as a dog because we have an idea of what a dog
-              is; an animal that barks and is a good boy.
-            </p>
-            <p class="fragment">And that's semiotics. Not semantics.</p>
-            <p class="fragment small">
-              (As well as a whole other talk. Check out
-              <a href="https://www.youtube.com/watch?v=46TjCjKMaQI">«Metaphors we compute by»</a>.)
-            </p>
-          </div>
-        </section>
-        <!-- Applied minimalism -->
-        <section class="standard">
-          <h2>Applied minimalism</h2>
-          <div>
-            <p class="fragment">
-              This is what we're going to do. We are going to take a piece of code, take away things
-              and examine what happens.
+            <p>
+              <code>T</code> kan være et stort tilstands-atom, eller register. Da må vi hele tiden
+              vite hvilke nøkler eller regiser-navn vi bruker til hva.
             </p>
             <p class="fragment">
-              When we hit something nonsensical, we go back. When we hit something intresting, we
-              stop.
+              Heldigvis finnes det en en godt egna datastruktur for akkurat dette formålet.
             </p>
+            <p class="fragment">En stack!</p>
           </div>
         </section>
         <section class="standard">
-          <h2>Applied minimalism</h2>
+          <h2>Alt er funksjoner</h2>
           <div>
-            <p>We'll begin here:</p>
+            <p>Det er dette som er «the secret sauce».</p>
+            <p class="fragment">
+              <em>Alt</em> er funksjoner som tar en stack og returnerer en stack.
+            </p>
+            <p class="fragment">
+              Tall er funksjoner, stringer er funksjoner, operatorer er funksjoner, osv
+            </p>
+            <p class="fragment">Funksjonene leser og skriver til stack'en for å utføre oppgaver.</p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Alt er funksjoner</h2>
+          <div>
+            <p>Vi starter med litt JS:</p>
             <div class="fragment">
               <p class="small">&lt;js&gt;</p>
               <pre><code data-trim data-noescape data-line-numbers="1-10|1-3|5-7|8-8|10-10|1-10" class="language-js">
@@ -441,53 +564,24 @@
 
                 (addEstimate(value) - error) % step === 0 // => true
               </code></pre>
-              <p class="small">(With this totally uncontrived example.)</p>
             </div>
           </div>
         </section>
         <section class="standard">
-          <h2>Applied minimalism</h2>
+          <h2>Alt er funksjoner</h2>
           <div>
-            <p>What if we could do without operators?</p>
-            <div class="fragment">
-              <p class="small">&lt;js&gt;</p>
-              <pre><code data-trim data-noescape data-line-numbers="1-14|5-7|11-11|14-14|1-14" class="language-js">
-                function add(a, b) {
-                  return a + b
-                }
-
-                function sub(a, b) {
-                  return a - b
-                }
-
-                let value = 0
-                let step = 4
-                let withoutError = a => sub(a, 1)
-                let addEstimate = a => add(5, a)
-
-                withoutError(addEstimate(value)) % step === 0 // => true
-              </code></pre>
-            </div>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Applied minimalism</h2>
-          <div>
-            <p>What if we could do without operators?</p>
+            <p>Vi skriver om litt, sånn at alt er funksjoner:</p>
             <p class="small">&lt;js&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="1-23|9-15|18-18|21-21|23-23|1-23" class="language-js">
+            <pre><code data-trim data-noescape data-line-numbers="1-20|14-18|1-12|20-20|1-20" class="language-js">
               function add(a, b) {
                 return a + b
               }
-
               function sub(a, b) {
                 return a - b
               }
-
               function eq(a, b) {
                 return a === b
               }
-
               function mod(a, b) {
                 return a % b
               }
@@ -503,57 +597,49 @@
           </div>
         </section>
         <section class="standard">
-          <h2>Applied minimalism</h2>
+          <h2>Alt er funksjoner</h2>
           <div>
-            <p>What if we could compose all those functions?</p>
-            <div class="fragment">
-              <p class="small">&lt;js?&gt;</p>
-              <pre><code data-trim data-noescape data-line-numbers="1-23|23-23" class="language-js">
-                function add(a, b) {
-                  return a + b
-                }
-
-                function sub(a, b) {
-                  return a - b
-                }
-
-                function eq(a, b) {
-                  return a === b
-                }
-
-                function mod(a, b) {
-                  return a % b
-                }
-
-                let value = 0
-                let findStep = a => mod(a, 4)
-                let withoutError = a => sub(a, 1)
-                let addEstimate = a => add(5, a)
-                let isAcceptable = a => eq(0, a)
-
-                pipeline(addEstimate, withoutError, findStep, isAcceptable)(value) // => true
-              </code></pre>
-            </div>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Applied minimalism</h2>
-          <div>
-            <p>What if we could compose all those functions?</p>
-            <p class="small">&lt;??&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="23-25|18-21" class="language-js">
+            <p>Vi skriver om litt, sånn at alt er funksjoner:</p>
+            <p class="small">&lt;js&gt;</p>
+            <pre><code data-trim data-noescape data-line-numbers="1-20|20-20|1-20" class="language-js">
               function add(a, b) {
                 return a + b
               }
-
               function sub(a, b) {
                 return a - b
               }
-
               function eq(a, b) {
                 return a === b
               }
+              function mod(a, b) {
+                return a % b
+              }
 
+              let value = 0
+              let findStep = a => mod(a, 4)
+              let withoutError = a => sub(a, 1)
+              let addEstimate = a => add(5, a)
+              let isAcceptable = a => eq(0, a)
+
+              pipeline(addEstimate, withoutError, findStep, isAcceptable)(value) // => true
+            </code></pre>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Alt er funksjoner</h2>
+          <div>
+            <p>Vi skriver om litt, sånn at alt er funksjoner:</p>
+            <p class="small">&lt;js?&gt;</p>
+            <pre><code data-trim data-noescape data-line-numbers="1-21|20-21|1-21" class="language-js">
+              function add(a, b) {
+                return a + b
+              }
+              function sub(a, b) {
+                return a - b
+              }
+              function eq(a, b) {
+                return a === b
+              }
               function mod(a, b) {
                 return a % b
               }
@@ -565,76 +651,103 @@
               let isAcceptable = a => eq(0, a)
 
               let program = addEstimate |> withoutError |> findStep |> isAcceptable
-
               program(value) // => true
             </code></pre>
           </div>
         </section>
         <section class="standard">
-          <h2>Applied minimalism</h2>
+          <h2>Alt er funksjoner</h2>
           <div>
-            <p>What if we didn't have multiple arguments?</p>
+            <p>Vi bytter ut argumenter med en stack:</p>
             <div class="fragment">
-              <p class="small">&lt;??&gt;</p>
-              <pre><code data-trim data-noescape data-line-numbers="1-25|1-15|18-21|1-25" class="language-js">
+              <p class="small">&lt;js?&gt;</p>
+              <pre><code data-trim data-noescape data-line-numbers="1-5|1-3|2-2|1-3|5-5|1-5" class="language-js">
                 function add(args) {
                   return args[0] + args[1]
                 }
-
-                function sub(args) {
-                  return args[0] - args[1]
-                }
-
-                function eq(args) {
-                  return args[0] === args[1]
-                }
-
-                function mod(args) {
-                  return args[0] % args[1]
-                }
-
-                let value = 0
-                let findStep = a => mod([a, 4])
-                let withoutError = a => sub([a, 1])
+                // ...
                 let addEstimate = a => add([5, a])
-                let isAcceptable = a => eq([0, a])
-
-                let program = addEstimate |> withoutError |> findStep |> isAcceptable
-
-                program(value) // => true
               </code></pre>
             </div>
           </div>
         </section>
         <section class="standard">
-          <h2>Applied minimalism</h2>
+          <h2>Alt er funksjoner</h2>
           <div>
-            <p>What if we didn't have any arguments?</p>
-            <p class="small">&lt;??&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="1-28|1-1|3-17|19-23|27-28|1-28" class="language-js">
-              const ARGS = []
+            <p>Vi bytter ut argumenter med en stack:</p>
+            <p class="small">&lt;js?&gt;</p>
+            <pre><code data-trim data-noescape data-line-numbers="1-9|1-7|2-3|5-5|6-6|1-7|9-9|1-9" class="language-js">
+              function add(args) {
+                let a = args.pop()
+                let b = args.pop()
+
+                let sum = a + b
+                args.push(sum)
+              }
+              // ...
+              let addEstimate = a => add([5, a])
+            </code></pre>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Alt er funksjoner</h2>
+          <div>
+            <p>Vi bytter ut argumenter med en stack:</p>
+            <p class="small">&lt;js?&gt;</p>
+            <pre><code data-trim data-noescape data-line-numbers="1-12|1-7|9-12|10-10|11-11|1-12" class="language-js">
+              function add(args) {
+                let a = args.pop()
+                let b = args.pop()
+
+                let sum = a + b
+                args.push(sum)
+              }
+              // ...
+              function addEstimate(args) {
+                args.push(5)
+                add(args)
+              }
+            </code></pre>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Alt er funksjoner</h2>
+          <div>
+            <p>Vi bytter ut argumenter med en stack:</p>
+            <p class="small">&lt;js?&gt;</p>
+            <pre><code data-trim data-noescape data-line-numbers="1-14|1-1|3-3|11-11|1-14" class="language-js">
+              const STACK = []
 
               function add() {
-                return ARGS[0] + ARGS[1]
-              }
+                let a = STACK.pop()
+                let b = STACK.pop()
 
-              function sub() {
-                return ARGS[0] - ARGS[1]
+                let sum = a + b
+                STACK.push(sum)
               }
-
-              function eq() {
-                return ARGS[0] === ARGS[1]
+              // ...
+              function addEstimate() {
+                STACK.push(5)
+                add(STACK)
               }
+            </code></pre>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Alt er funksjoner</h2>
+          <div>
+            <p>Vi gjør den delte stack'en til et implisitt argument:</p>
+            <p class="small">&lt;js?&gt;</p>
+            <pre><code data-trim data-noescape data-line-numbers="1-14|3-3|5-9|11-11|1-14" class="language-js">
+              const STACK = []
 
-              function mod() {
-                return ARGS[0] % ARGS[1]
-              }
+              // add, mod, sub, eq
 
-              let value = () => { ARGS.push(0) }
-              let findStep = () => { ARGS.push(4) mod() }
-              let withoutError = () => { ARGS.push(1) sub() }
-              let addEstimate = () => { ARGS.push(5) add() }
-              let isAcceptable = () => { ARGS.push(0) eq() }
+              function value() { STACK.push(0) }
+              function findStep() { STACK.push(4); mod() }
+              function withoutError() { STACK.push(1); sub() }
+              function addEstimate() { STACK.push(5); add() }
+              function isAcceptable() { STACK.push(0); eq() }
 
               let program = addEstimate |> withoutError |> findStep |> isAcceptable
 
@@ -644,169 +757,74 @@
           </div>
         </section>
         <section class="standard">
-          <h2>Applied minimalism</h2>
+          <h2>Alt er funksjoner</h2>
           <div>
-            <p>What if we didn't need to return anything?</p>
-            <div class="fragment">
-              <p class="small">&lt;??&gt;</p>
-              <pre><code data-trim data-noescape data-line-numbers="1-7" class="language-js">
-                  const ARGS = []
-
-                  function add() {
-                    return ARGS[0] + ARGS[1]
-                  }
-
-                  // ...
-                </code></pre>
-            </div>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Applied minimalism</h2>
-          <div>
-            <p>What if we didn't need to return anything?</p>
+            <p>Vi gjør den delte stack'en til et implisitt argument:</p>
             <p class="small">&lt;??&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="1-10|1-1|3-8|4-5|6-6|7-7|3-8|1-10" class="language-js">
-                const ARGS = []
+            <pre><code data-trim data-noescape data-line-numbers="1-14|5-9|1-14|13-14|6-7|1-14" class="language-js">
+              const STACK = []
 
-                function add() {
-                  let a = ARGS.pop()
-                  let b = ARGS.pop()
-                  let res = a + b
-                  ARGS.push(res)
-                }
+              // add, mod, sub, eq
 
-                // ...
-              </code></pre>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Applied minimalism</h2>
-          <div>
-            <p>What if we didn't need to return anything?</p>
-            <p class="small">&lt;??&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="1-10" class="language-js">
-                const ARGS = []
-
-                function +() {
-                  let a = ARGS.pop()
-                  let b = ARGS.pop()
-                  let res = a + b
-                  ARGS.push(res)
-                }
-
-                // ...
-              </code></pre>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Applied minimalism</h2>
-          <div>
-            <p>What if new functions were compositions?</p>
-            <div class="fragment">
-              <p class="small">&lt;??&gt;</p>
-              <pre><code data-trim data-noescape data-line-numbers="1-18|3-3|6-13|6-7" class="language-js">
-                const ARGS = []
-
-                // +, mod/%, sub/-, eq/== are now in the stdlib
-
-                let value = () => { ARGS.push(0) }
-                // mod(a, 4)
-                let findStep = () => { ARGS.push(4) } |> %
-                // sub(a, 1)
-                let withoutError = () => { ARGS.push(1) } |> -
-                // add(5, a)
-                let addEstimate = () => { ARGS.push(5) } |> +
-                // eq(0, a)
-                let isAcceptable = () => { ARGS.push(0) } |> ==
-
-                let program = addEstimate |> withoutError |> findStep |> isAcceptable
-
-                value()
-                program() // => ???
-              </code></pre>
-            </div>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Applied minimalism</h2>
-          <div>
-            <p>What if new functions were compositions?</p>
-            <p class="small">&lt;??&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="11-12|3-8|13-14|21-22|1-22" class="language-js">
-              const ARGS = []
-
-              function swap() {
-                let a = ARGS.pop()
-                let b = ARGS.pop()
-                ARGS.push(a)
-                ARGS.push(b)
-              }
-
-              let value = () => { ARGS.push(0) }
-              // mod(a, 4)
-              let findStep = () => { ARGS.push(4) } |> swap |> %
-              // sub(a, 1)
-              let withoutError = () => { ARGS.push(1) } |> swap |> -
-              // add(5, a)
-              let addEstimate = () => { ARGS.push(5) } |> +
-              // eq(0, a)
-              let isAcceptable = () => { ARGS.push(0) } |> ==
+              let value = STACK.push(0)
+              let findStep = STACK.push(4) |> mod
+              let withoutError = STACK.push(1) |> sub
+              let addEstimate = STACK.push(5) |> add
+              let isAcceptable = STACK.push(0) |> eq
 
               let program = addEstimate |> withoutError |> findStep |> isAcceptable
+
+              value()
+              program() // => ???
+            </code></pre>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Alt er funksjoner</h2>
+          <div>
+            <p>Vi gjør den delte stack'en til et implisitt argument:</p>
+            <p class="small">&lt;??&gt;</p>
+            <pre><code data-trim data-noescape data-line-numbers="1-21|5-10|13-14|12-16|20-21|1-21" class="language-js">
+              const STACK = []
+
+              // add, mod, sub, eq
+
+              function swap() {
+                let a = STACK.pop()
+                let b = STACK.pop()
+                STACK.push(a)
+                STACK.push(b)
+              }
+
+              let value = STACK.push(0)
+              let findStep = STACK.push(4) |> swap |> mod
+              let withoutError = STACK.push(1) |> swap |> sub
+              let addEstimate = STACK.push(5) |> add
+              let isAcceptable = STACK.push(0) |> eq
+
+              let program = addEstimate |> withoutError |> findStep |> isAcceptable
+
               value()
               program() // => true
             </code></pre>
           </div>
         </section>
         <section class="standard">
-          <h2>Applied minimalism</h2>
+          <h2>Alt er funksjoner</h2>
           <div>
-            <p>What if new functions were compositions?</p>
-            <p class="small">&lt;??&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="1-25" class="language-js">
-              const STATE = []
-
-              function swap() {
-                let a = STATE.pop()
-                let b = STATE.pop()
-                STATE.push(a)
-                STATE.push(b)
-              }
-
-              let value = () => { STATE.push(0) }
-              // mod(a, 4)
-              let findStep = () => { STATE.push(4) } |> swap |> %
-              // sub(a, 1)
-              let withoutError = () => { STATE.push(1) } |> swap |> -
-              // add(5, a)
-              let addEstimate = () => { STATE.push(5) } |> +
-              // eq(0, a)
-              let isAcceptable = () => { STATE.push(0) } |> ==
-
-              let program = addEstimate |> withoutError |> findStep |> isAcceptable
-              value()
-              program() // => true
-            </code></pre>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Applied minimalism</h2>
-          <div>
-            <p>What if we made values functions?</p>
+            <p>Vi gjør den delte stack'en til et implisitt argument:</p>
             <div class="fragment">
               <p class="small">&lt;??&gt;</p>
-              <pre><code data-trim data-noescape data-line-numbers="1-15|5-6|7-10|3-3|1-1|1-15" class="language-js">
-                // STATE is now hidden behind functions in the stdlib
+              <pre><code data-trim data-noescape data-line-numbers="1-14" class="language-js">
+                const STACK = []
 
-                // swap are now in the stdlib
+                // add, mod, sub, eq, swap
 
-                // let value = () => { STATE.push(0) }
-                let value = 0
-                let findStep = 4 |> swap |> %
-                let withoutError = 1 |> swap |> -
-                let addEstimate = 5 |> +
-                let isAcceptable = 0 |> ==
+                let value = STACK.push(0)
+                let findStep = STACK.push(4) |> swap |> mod
+                let withoutError = STACK.push(1) |> swap |> sub
+                let addEstimate = STACK.push(5) |> add
+                let isAcceptable = STACK.push(0) |> eq
 
                 let program = addEstimate |> withoutError |> findStep |> isAcceptable
 
@@ -817,51 +835,82 @@
           </div>
         </section>
         <section class="standard">
-          <h2>Applied minimalism</h2>
+          <h2>Alt er funksjoner</h2>
           <div>
-            <p>What if we made composition implicit?</p>
-            <div class="fragment">
-              <p class="small">&lt;??&gt;</p>
-              <pre><code data-trim data-noescape data-line-numbers="1-10" class="language-js">
-                let value = 0
-                let findStep = 4 |> swap |> %
-                let withoutError = 1 |> swap |> -
-                let addEstimate = 5 |> +
-                let isAcceptable = 0 |> ==
-
-                let program = addEstimate |> withoutError |> findStep |> isAcceptable
-
-                value()
-                program() // => true
-              </code></pre>
-            </div>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Applied minimalism</h2>
-          <div>
-            <p>What if we made composition implicit?</p>
+            <p>Vi gjør den delte stack'en til et implisitt argument:</p>
             <p class="small">&lt;??&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="1-10" class="language-js">
+            <pre><code data-trim data-noescape data-line-numbers="1-14|5-9|1-1|1-14" class="language-js">
+              // STACK er en implementasjonsdetalj
+
+              // add, mod, sub, eq, swap
+
               let value = 0
-              let findStep = 4 swap %
-              let withoutError = 1 swap -
-              let addEstimate = 5 +
-              let isAcceptable = 0 ==
+              let findStep = 4 |> swap |> mod
+              let withoutError = 1 |> swap |> sub
+              let addEstimate = 5 |> add
+              let isAcceptable = 0 |> eq
+
+              let program = addEstimate |> withoutError |> findStep |> isAcceptable
+
+              value()
+              program() // => true
+            </code></pre>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Alt er funksjoner</h2>
+          <div>
+            <p>Vi gjør den delte stack'en til et implisitt argument:</p>
+            <p class="small">&lt;??&gt;</p>
+            <pre><code data-trim data-noescape data-line-numbers="1-13|13-13|1-13" class="language-js">
+              // STACK er en implementasjonsdetalj
+
+              // add, mod, sub, eq, swap
+
+              let value = 0
+              let findStep = 4 |> swap |> mod
+              let withoutError = 1 |> swap |> sub
+              let addEstimate = 5 |> add
+              let isAcceptable = 0 |> eq
+
+              let program = addEstimate |> withoutError |> findStep |> isAcceptable
+
+              value |> program // => true
+            </code></pre>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Alt er funksjoner</h2>
+          <div>
+            <p>Vi gjør den delte stack'en til et implisitt argument:</p>
+            <p class="small">&lt;??&gt;</p>
+            <pre><code data-trim data-noescape data-line-numbers="1-13" class="language-js">
+              // STACK er en implementasjonsdetalj
+
+              // add, mod, sub, eq, swap
+
+              let value = 0
+              let findStep = 4 swap mod
+              let withoutError = 1 swap sub
+              let addEstimate = 5 add
+              let isAcceptable = 0 eq
 
               let program = addEstimate withoutError findStep isAcceptable
 
-              value()
-              program() // => true
+              value program // => true
             </code></pre>
           </div>
         </section>
         <section class="standard">
-          <h2>Applied minimalism</h2>
+          <h2>Alt er funksjoner</h2>
           <div>
-            <p>What if we made composition implicit?</p>
+            <p>Vi gjør den delte stack'en til et implisitt argument:</p>
             <p class="small">&lt;??&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="1-9" class="language-js">
+            <pre><code data-trim data-noescape data-line-numbers="1-13" class="language-js">
+              // STACK er en implementasjonsdetalj
+
+              // add/+, mod/%, sub/-, eq/==, swap
+
               let value = 0
               let findStep = 4 swap %
               let withoutError = 1 swap -
@@ -875,423 +924,238 @@
           </div>
         </section>
         <section class="standard">
-          <h2>Applied minimalism</h2>
+          <h2>Alt er funksjoner</h2>
           <div>
-            <p>What if we got rid of everything but functions?!</p>
-            <div class="fragment">
-              <p class="small">&lt;??&gt;</p>
-              <pre><code data-trim data-noescape data-line-numbers="1-1" class="language-js">
-                value 5 + 1 swap - 4 swap % 0 == // => true
-              </code></pre>
-            </div>
-
-            <div class="fragment">
-              <p>Some things are too good to give up...</p>
-              <p class="small">&lt;??&gt;</p>
-              <pre><code data-trim data-noescape data-line-numbers="1-9" class="language-js">
-                let value = 0
-                let findStep = 4 swap %
-                let withoutError = 1 swap -
-                let addEstimate = 5 +
-                let isAcceptable = 0 ==
-
-                value addEstimate withoutError findStep isAcceptable // => true
-              </code></pre>
-            </div>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Applied minimalism</h2>
-          <div>
-            <p>What if we got rid of everything but functions?!</p>
+            <p>Vi gjør den delte stack'en til et implisitt argument:</p>
             <p class="small">&lt;??&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="1-1" class="language-js">
-              value 5 + 1 swap - 4 swap % 0 = // => true
-            </code></pre>
+            <pre><code data-trim data-noescape data-line-numbers="1-13" class="language-js">
+              // STACK er en implementasjonsdetalj
 
-            <p>Some things are too good to give up...</p>
-            <p class="small">&lt;??&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers="1-9|5-5|1-9" class="language-js">
+              // add/+, mod/%, sub/-, eq/==, swap
+
               value: 0 ;
               findStep: 4 swap % ;
               withoutError: 1 swap - ;
               addEstimate: 5 + ;
-              isAcceptable: 0 = ;
+              isAcceptable: 0 == ;
 
-              value addEstimate withoutError findStep isAcceptable // => true
+              program: addEstimate withoutError findStep isAcceptable ;
+
+              value program // => true
             </code></pre>
           </div>
         </section>
         <section class="standard">
-          <h2>Applied minimalism</h2>
+          <h2>Alt er funksjoner</h2>
           <div>
-            <p class="no-margin-bottom">Where we started:</p>
-            <p class="small">&lt;js&gt;</p>
-            <pre><code data-trim data-noescape data-line-numbers class="language-js">
-              function add(a, b) {
-                return a + b
-              }
-
-              let value = 0
-              let step = 4
-              let error = 1
-              let addEstimate = a => add(5, a)
-
-              (addEstimate(value) - error) % step === 0 // => true
-            </code></pre>
-
+            <p>Vi gjør den delte stack'en til et implisitt argument:</p>
             <div class="fragment">
-              <p class="no-margin-bottom">Where we ended up:</p>
               <p class="small">&lt;??&gt;</p>
-              <pre><code data-trim data-noescape data-line-numbers class="language-js">
+              <pre><code data-trim data-noescape data-line-numbers="1-13" class="language-js">
                 value: 0 ;
                 findStep: 4 swap % ;
                 withoutError: 1 swap - ;
                 addEstimate: 5 + ;
-                isAcceptable: 0 = ;
+                isAcceptable: 0 == ;
 
-                value addEstimate withoutError findStep isAcceptable // => true
+                value
+                addEstimate
+                withoutError
+                findStep
+                isAcceptable // => true
               </code></pre>
             </div>
-          </div>
-        </section>
-        <!-- Hello Concatenative Programming -->
-        <section class="center">
-          <h3>Say hello to<br />«Concatenative Programming»!</h3>
-        </section>
-        <section class="standard">
-          <h2>Concatenative programming</h2>
-          <div>
-            <p>Programs are constructed by composing functions.</p>
-            <p class="fragment">
-              As opposed to the way most other PLs work, which is by applying functions to values.
-            </p>
-            <p class="fragment small">(Concatenative vs Applicative.)</p>
+            <p class="fragment">Konkatenativ programmering på 5 minutter!</p>
           </div>
         </section>
         <section class="standard">
-          <h2>Concatenative programming</h2>
-          <div>
-            <p>There are no values, atleast not in the traditional sense, only functions.</p>
-            <p class="fragment">
-              What looks like values are actually functions that produce that value.
-            </p>
-            <p class="fragment small">(Who knew <code>""</code> could be a function.)</p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Concatenative programming</h2>
-          <div>
-            <p>Every function has the same type: <code>f State => State</code></p>
-            <p class="fragment">
-              <code>State</code> is usually a stack, because stacks are simple.
-            </p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Concatenative programming</h2>
+          <h2>Medaljens bakside</h2>
           <div>
             <p>
-              Because of the global state usually lives on a stack, concatenative programming is
-              often referred to as «Stack Based Programming».
+              Som dere allerede har fått litt smakebit av er det en ganske åpenbar bakside til denne
+              befriende syntaksen.
             </p>
-            <p class="fragment">
-              Personally I don't like that. Too much in common with the
-              <a href="https://en.wikipedia.org/wiki/Turing_tarpit">«Turing Tarpit»</a>.
-            </p>
-            <p class="fragment">Besides, the stack is the least intresting part.</p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Concatenative programming</h2>
-          <div>
-            <p>These languages are not a modern phenomenon. They've been around for a while.</p>
-            <p class="fragment">
-              Forth (1968) and Joy (2001) are probably the two most well known.
-            </p>
-            <p class="fragment">Which also happen to represent two very different approaches.</p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Forth</h2>
-          <div>
-            <p>
-              Created by Charles «Chuck» H. Moore to program directly on CPUs, as an alternative to
-              Assembly.
-            </p>
-            <p class="fragment">Designed to be simple, portable and human-friendly.</p>
-            <p class="fragment">Has seen wide and varied use.</p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Joy</h2>
-          <div>
-            <p>
-              Created by Manfred von Thun because he wanted a simpler Lambda Calculus without
-              variable bindings.
-            </p>
-            <p class="fragment">Inspired by Backus' FP and SKI calculus from combinatory logic.</p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Concatenative programming</h2>
-          <div>
-            <p>
-              The funny thing is, Forth and Joy both ended up in the same place, despite following
-              vastly different paths.
-            </p>
-            <p class="fragment">
-              That says something about the power of simple semantics driving a simple syntax.
-            </p>
-          </div>
-        </section>
-        <!-- Concatenative Geometry -->
-        <section class="standard">
-          <h2>Concatenative Geometry</h2>
-          <div>
-            <p>We have a PL that's supposedly excellent at composing programs.</p>
-            <p class="fragment">
-              What better than to implement some of the stuff from Peter Henderson's seminal 1982
-              paper <a href="https://dl.acm.org/doi/10.1145/800068.802148">«Functional Geometry»</a>
-            </p>
-            <p class="fragment small">
-              (Actually, we're going to use the
-              <a href="https://eprints.soton.ac.uk/257577/1/funcgeo2.pdf">2002 revised version.</a>)
-            </p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Concatenative Geometry</h2>
-          <div>
-            <p>The basis of the paper is to construct a tessellation.</p>
-            <p class="fragment">
-              Which is math-speak for covering a plane with repeating images that completely cover
-              the entire plane.
-            </p>
-          </div>
-        </section>
-        <section class="center">
-          <div>
-            <figure>
-              <img width="600" src="src/img/escher-fish.png" alt="Escher Fish" />
-              <figcaption>An approximation of M. C. Escher's Square Limit</figcaption>
-            </figure>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Concatenative Geometry</h2>
-          <div>
-            <p>
-              We are going to be doing this using HTML Canvas API and a concatenative language
-              implemented in JS.
-            </p>
-            <p class="fragment small">
-              (And yes, I've committed the sin of implementing my own language. More on that later.)
-            </p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Concatenative Geometry</h2>
-          <div>
-            <p>
-              The paper outlines three basic operations: <code>flip</code>, <code>turn</code> and
-              <code>toss</code>.
-            </p>
-            <p class="fragment">
-              In addition the paper defines <code>over</code>, which groups images that belong to
-              the same box. We won't need that, for reasons that hopefully becomes apparent.
-            </p>
-          </div>
-        </section>
-        <!-- Concatenative Geometry: flip -->
-        <section class="center">
-          <h3>Flip</h3>
-        </section>
-        <section>
-          <ait-slide demo="flip">
-            <div class="editor"></div>
-            <div class="display canvas"></div>
-          </ait-slide>
-        </section>
-        <!-- Concatenative Geometry: turn -->
-        <section class="center">
-          <h3>Turn</h3>
-        </section>
-        <section>
-          <ait-slide demo="turn">
-            <div class="editor"></div>
-            <div class="display canvas"></div>
-          </ait-slide>
-        </section>
-        <!-- Concatenative Geometry: toss -->
-        <section class="center">
-          <h3>Toss</h3>
-        </section>
-        <section>
-          <ait-slide demo="toss">
-            <div class="editor"></div>
-            <div class="display canvas"></div>
-          </ait-slide>
-        </section>
-        <!-- Concatenative Geometry: tiles -->
-        <section class="standard">
-          <h2>Concatenative Geometry</h2>
-          <div>
-            <p>
-              Next up the paper defines a couple of tesselation tiles: <code>ttile</code> and
-              <code>utile</code>
-            </p>
-            <div class="fragment">
-              <p class="no-margin-bottom"><code>ttile</code> is helpfully defined as:</p>
-              <p></p>
-              <pre><code data-trim data-noescape data-line-numbers>
-                over(draw, over(flip(toss(draw)), turn(turn(turn(draw)))))
-              </code></pre>
-            </div>
-            <div class="fragment">
-              <p class="no-margin-bottom">and <code>utile</code>:</p>
-              <p></p>
-              <pre><code data-trim data-noescape data-line-numbers>
-                over(over(flip(toss(draw)), turn(flip(toss(draw)))), over(turn(turn(flip(toss(draw)))), turn(turn(turn(flip(toss(draw))))))
-              </code></pre>
-            </div>
+            <p class="fragment">Det er mye mikk med en stack.</p>
           </div>
         </section>
         <section>
-          <ait-slide demo="tiles">
-            <div class="editor"></div>
-            <div class="display canvas"></div>
-          </ait-slide>
-        </section>
-        <!-- Concatenative Geometry: tesselation -->
-        <section class="standard">
-          <h2>Concatenative Geometry</h2>
-          <div>
-            <p>We now have all the parts we need to make our tessellation.</p>
-            <p class="fragment">
-              We'll divide the plane into a <code>3x3</code> grid and fill each cell with a tile
-              such that it completely covers the whole canvas.
-            </p>
-          </div>
-        </section>
-        <section>
-          <ait-slide demo="tesselation">
-            <div class="editor"></div>
-            <div class="display canvas"></div>
-          </ait-slide>
-        </section>
-        <!-- Quotations -->
-        <section class="center">
-          <div>
-            <blockquote>
-              «What was that weird thing you did with the <code>[]</code>-brackets?»
-            </blockquote>
-            <p>&mdash;Someone, hopefully</p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>Concatenative Programming</h2>
-          <div>
-            <p>Quotation. A sub-program omitted from execution.</p>
-            <p class="fragment">
-              We can modify quotations using concatenative operations like cons, append.
-            </p>
-            <p class="fragment">
-              Gives us the ability to do all sort of control flow, higher order functions, and
-              recursive shennanigans.
-            </p>
-          </div>
-        </section>
-        <!-- Quotations: demo control flow and HOFs -->
-        <section>
-          <ait-slide demo="">
+          <ait-slide demo="arithmetics">
             <div class="editor"></div>
             <div class="display"></div>
           </ait-slide>
         </section>
-        <!-- Quotations: anonymous recursion -->
+        <!-- What of intrest is easy? -->
+        <section class="center">
+          <blockquote>
+            «Beware of the Turing tar-pit in which everything is possible but nothing of interest is
+            easy.»
+          </blockquote>
+          <p>&mdash;Alan Perlis</p>
+        </section>
+        <section class="standard">
+          <h2>«...[What] of intrest is easy?»</h2>
+          <div>
+            <p>Det er jo det store spørsmålet her.</p>
+            <p class="fragment">
+              Konkatenative språk er åpenbart Turing-komplette, så alt er mulig.
+            </p>
+            <p class="fragment">Så hvilke interessante ting kan vi gjøre lett?</p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>«...[What] of intrest is easy?»</h2>
+          <div>
+            <p>
+              Det kan være fristende å relegere konkatenative språk til «stack-based languages».
+            </p>
+            <p class="fragment">
+              Men konkatenative språks «stackiness» er egentlig ikke det interessante her.
+            </p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Delvis evaluering</h2>
+          <div>
+            <p>
+              At programmer konstrueres med kun en type operasjon kan vi evaluere programmer
+              stykkevis og delt.
+            </p>
+            <div class="fragment">
+              <p>Alle disse formene er ekvivalente:</p>
+              <p></p>
+              <pre><code data-trim data-noescape data-line-numbers class="language-js">
+                valueA valueB operationA operationB
+
+                (valueA valueB) operationA operationB
+
+                valueA valueB (operationA operationB)
+
+                valueA (valueB operationA) operationB
+
+                (valueA valueB operationA) operationB
+              </code></pre>
+            </div>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Delvis evaluering</h2>
+          <div>
+            <p>Dette har noen interessante følger for ting som parallelisering og strømming.</p>
+            <p class="fragment">
+              Alle subsett av programmet kan reduseres til et program som tar en stack og returnerer
+              en stack.
+            </p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Delvis evaluering</h2>
+          <div>
+            <p>Å implementere en kompilator eller tolker blir en veldig enkel oppgave.</p>
+            <p class="fragment">
+              (Faktisk så enkel at jeg har implementert et enkelt konkatenativt språk som brukes til
+              demoer i disse slidene.)
+            </p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Programmer som data</h2>
+          <div>
+            <p>Det er bare rekkefølgen som betyr noe ved evaluering.</p>
+            <p class="fragment">
+              Dermed kan du putte kode-som-data inn i programmet og markere det for eksekvering ved
+              å modifisere strømmen av kode som sendes til evaluering.
+            </p>
+            <p class="fragment">Noe som igjen gjør høyere-ordens funksjoner mulig.</p>
+          </div>
+        </section>
+        <section>
+          <ait-slide demo="hof">
+            <div class="editor"></div>
+            <div class="display"></div>
+          </ait-slide>
+        </section>
         <section>
           <ait-slide demo="linrec">
             <div class="editor"></div>
             <div class="display"></div>
           </ait-slide>
         </section>
-        <!-- Wrap-up -->
         <section class="standard">
-          <h2>In praise of simplicity</h2>
+          <h2>Tankenær kode</h2>
           <div>
-            <p>What suprises me the most is how little we actually lose.</p>
-            <p class="fragment">Sure, we have to do some deeply dissatisfying stack fiddling.</p>
+            <p>Syntaksen og semantikken legger opp til kortfattethet.</p>
             <p class="fragment">
-              And operand odering for operators like <code>/</code> and <code>%</code> makes my
-              brain hurt a little.
+              Du ledes hele tiden mot å bearbeide koden til noe som fanger kompleksiteten bak et lag
+              av mening.
             </p>
+            <p class="fragment small">(Hvem sa at pisk ikke var effektivt.)</p>
           </div>
         </section>
         <section class="standard">
-          <h2>In praise of simplicity</h2>
+          <h2>Tankenær kode</h2>
           <div>
-            <p>The meta-programming you can do with quotations reminds me of LISP.</p>
-            <p class="fragment">
-              Wanna partially apply an argument to a bunch of functions? <code>cons</code> &
-              <code>map</code>
+            <p>«Factoring» ble den prosessen kalt blandt FORTH-programmerere.</p>
+            <div class="fragment no-spacing">
+              <p>Factor</p>
+              <p>...to clarify meaning</p>
+              <p>...to give something a name</p>
+              <p>...to avoid repitition</p>
+              <p>...to hide details likely to change</p>
+              <p>...to simplify APIs</p>
+            </div>
+            <p class="fragment small">
+              (Dette er altså 10 år før «Refactoring» ble et vanlig begrep)
             </p>
           </div>
         </section>
+        <section>
+          <ait-slide demo="triangle-fun">
+            <div class="editor"></div>
+            <div class="display canvas"></div>
+          </ait-slide>
+        </section>
+        <section>
+          <ait-slide demo="triangle-fun-done">
+            <div class="editor"></div>
+            <div class="display canvas"></div>
+          </ait-slide>
+        </section>
         <section class="standard">
-          <h2>In praise of simplicity</h2>
+          <h2>Tankenær kode</h2>
           <div>
             <p>
-              Explorative programing, like what you would do when working creatively, feels really
-              good.
-            </p>
-            <p class="fragment">The lack of syntax getting in your way is *chef's kiss*</p>
-            <p class="fragment">
-              Also reordering the functions in a pipeline or slipping a function call into the
-              middle of a pipeline is really neat.
-            </p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>In praise of simplicity</h2>
-          <div>
-            <p>The runtime for a PL like this is suprisingly easy to make.</p>
-            <p class="fragment">
-              There's a reason you can find PLs with similar semantics in the JVM (JVM Byte Code)
-              and in printers (PostScript).
-            </p>
-          </div>
-        </section>
-        <section class="standard">
-          <h2>In praise of simplicity</h2>
-          <div>
-            <p>
-              Given how easy it is to create a runtime for a PL like this, making DSLs and embedding
-              them in your program as an alternative to a GUI seems like a good idea.
+              Det minimalistiske settet med valg du har til en hver tid tvinger deg til å tenke.
             </p>
             <p class="fragment">
-              Especially for things that already rely on shared global state, like HTML Canvas or
-              WebAudioAPI.
+              Og det gjør at du må angripe problemløsning med kode på en annen måte.
+            </p>
+            <p class="fragment small">
+              (Og det er utrolig deilig å slippe fetisjiseringen av mengde kode som et mål på
+              produktivitet.)
             </p>
           </div>
         </section>
         <section class="center">
-          <blockquote>
-            «A language that doesn't affect the way you think about programming is not worth
-            knowing.»
-          </blockquote>
-          <p>&mdash;Alan Perlis</p>
+          <h2>Nysgjerrig?</h2>
+          <div class="fragment">
+            <p><a href="https://concatenative.org">concatenative.org</a></p>
+            <p><a href="https://thinking-forth.sourceforge.net/">Thinking FORTH</a></p>
+            <p>
+              <a href="https://leanpub.com/readevalprintlove003/read">Read-Eval-Print-λove #3</a>
+            </p>
+            <p><a href="https://factorcode.org/">Factor programming language</a></p>
+          </div>
         </section>
         <section class="center">
           <h2>Fin.</h2>
           <div>
-            <p>Thanks for listening. Stay curious!</p>
+            <p>Takk for meg!</p>
             <br />
             <p class="small">Stian Veum Møllersen / @mollerse</p>
             <p class="small">
               slides:
               <a
-                href="https://mollerse.github.io/programming-minimalism-presentation/dist/devfestcph2024/index.html"
+                href="https://mollerse.github.io/programming-minimalism-presentation/dist/hellostavanger2024/index.html"
                 >github/mollerse/programming-minimalism-presentation</a
               >
             </p>

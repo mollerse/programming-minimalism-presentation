@@ -1,0 +1,29 @@
+# 600x600 canvas
+
+"cyan" strokeStyle
+"hotpink" shadowColor
+"lighter" globalCompositeOperation
+10 shadowBlur
+2 lineWidth
+
+300 300 translate
+
+neon:
+ [ 0.25 0.5 0.75 1 ]
+ [ 2 * lineWidth dup exec ]
+ step
+ pop
+;
+
+triangle:
+  beginPath
+  [0 -200] moveTo
+  [200 200] lineTo
+  [-200 200] lineTo
+  closePath
+  stroke ;
+
+[ triangle ] neon
+40
+[ 0.9 dup scale PI 90 / rotate [ triangle ] neon ]
+times

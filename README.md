@@ -27,8 +27,8 @@ npm start
 
 ## View online
 
-Most recent version: [Copenhagen Developers Festival 2024](https://mollerse.github.io/programming-minimalism-presentation/dist/devfestcph2024/index.html)
+Most recent version: [#HelloStavanger 2024 [NO]](https://mollerse.github.io/programming-minimalism-presentation/dist/hellostavanger2024/index.html)
 
 Older versions:
 
-- N/A
+- [Copenhagen Developers Festival 2024 [EN]](https://mollerse.github.io/programming-minimalism-presentation/dist/devfestcph2024/index.html)

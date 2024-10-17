@@ -1,0 +1,33 @@
+# (x,y,z) => y^2 + x^2 - |y|
+
+x: 2 ;
+y: -3 ;
+z: 5 ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#squared: dup * ;
+#
+#y squared x squared +
+#y abs
+#-

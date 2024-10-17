@@ -11,6 +11,11 @@ import toss from "../demos/03_toss.ait?raw";
 import tiles from "../demos/04_tiles.ait?raw";
 import tesselation from "../demos/05_tesselation.ait?raw";
 import linrec from "../demos/06_linrec.ait?raw";
+import triangles from "../demos/07_triangles.ait?raw";
+import triangleFun from "../demos/08_triangle_fun.ait?raw";
+import arithmetics from "../demos/09_arithmetics.ait?raw";
+import hof from "../demos/10_hof.ait?raw";
+import triangleFunDone from "../demos/11_triangle_fun_done.ait?raw";
 
 const CANVAS = "canvas";
 const STACK = "stack";
@@ -53,6 +58,11 @@ export class AitSlide extends HTMLElement {
       tiles: tiles,
       tesselation: tesselation,
       linrec: linrec,
+      triangles: triangles,
+      arithmetics: arithmetics,
+      hof: hof,
+      "triangle-fun": triangleFun,
+      "triangle-fun-done": triangleFunDone,
       unknown: "",
     };
 

@@ -1,0 +1,17 @@
+# 600x600 canvas
+
+"hotpink" strokeStyle
+
+300 300 translate
+
+triangle:
+  beginPath
+  [0 -200] moveTo
+  [200 200] lineTo
+  [-200 200] lineTo
+  closePath
+  stroke ;
+
+10
+[ 0.9 dup scale triangle ]
+times
