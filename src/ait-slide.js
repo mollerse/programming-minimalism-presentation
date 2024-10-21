@@ -16,6 +16,7 @@ import triangleFun from "../demos/08_triangle_fun.ait?raw";
 import arithmetics from "../demos/09_arithmetics.ait?raw";
 import hof from "../demos/10_hof.ait?raw";
 import triangleFunDone from "../demos/11_triangle_fun_done.ait?raw";
+import trianglePoints from "../demos/12_triangle_points.ait?raw";
 
 const CANVAS = "canvas";
 const STACK = "stack";
@@ -63,6 +64,7 @@ export class AitSlide extends HTMLElement {
       hof: hof,
       "triangle-fun": triangleFun,
       "triangle-fun-done": triangleFunDone,
+      "triangle-points": trianglePoints,
       unknown: "",
     };
 
