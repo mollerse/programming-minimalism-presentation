@@ -27,9 +27,10 @@ npm start
 
 ## View online
 
-Most recent version: [TDC 2024 [NO]](https://mollerse.github.io/programming-minimalism-presentation/dist/tdc2024/index.html)
+Most recent version: [Faggruppe Programering NRK](https://mollerse.github.io/programming-minimalism-presentation/dist/fagprog2024/index.html)
 
 Older versions:
 
-- [Copenhagen Developers Festival 2024 [EN]](https://mollerse.github.io/programming-minimalism-presentation/dist/devfestcph2024/index.html)
+- [TDC 2024 [NO]](https://mollerse.github.io/programming-minimalism-presentation/dist/tdc2024/index.html)
 - [#HelloStavanger 2024 [NO]](https://mollerse.github.io/programming-minimalism-presentation/dist/hellostavanger2024/index.html)
+- [Copenhagen Developers Festival 2024 [EN]](https://mollerse.github.io/programming-minimalism-presentation/dist/devfestcph2024/index.html)

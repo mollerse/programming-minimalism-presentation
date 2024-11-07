@@ -218,13 +218,13 @@
         <section class="center">
           <h1>In praise of<br />programming<br />minimalism</h1>
           <p class="small">Stian Veum Møllersen / @mollerse</p>
-          <p class="small">TDC 2024</p>
+          <p class="small">Faggruppe Programmering 2024</p>
         </section>
         <!-- Hei -->
         <section class="standard">
           <h2>Hei!</h2>
           <div>
-            <p>Jeg heter Stian og jobber i Visuelle Historier i NRK.</p>
+            <p>Jeg heter Stian og jobber i Visuelle Historier.</p>
             <p class="fragment">
               Som vil si at jeg jobber med redaksjonelt innhold på web; langlesing, interaktivt
               innhold, datakverning etc.
@@ -1166,6 +1166,143 @@
           </div>
         </section>
         <section class="center">
+          <h2>Bonus: Konkatenativ Geometri</h2>
+        </section>
+        <section class="standard">
+          <h2>Konkatenativ Geometri</h2>
+          <div>
+            <p>
+              Vi har et programmeringspråk som visstnok er veldig ålreit til å skrive
+              komposisjonsdrevne programmer.
+            </p>
+            <p class="fragment">
+              Hva er da bedre enn å ta en titt på Peter Hendersons artikkel om
+              <a href="https://dl.acm.org/doi/10.1145/800068.802148">«Functional Geometry»</a> fra
+              1982?
+            </p>
+            <p class="fragment">
+              Å ta en titt på Peter Hendersons reviderte artikkel om
+              <a href="https://eprints.soton.ac.uk/257577/1/funcgeo2.pdf"
+                >«Functional Geometry» fra 2002</a
+              >
+              så klart!
+            </p>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Konkatenativ Geometri</h2>
+          <div>
+            <p>Artikkelen(e) handler om hvordan du kan konstruere tesselleringer.</p>
+            <p class="fragment">
+              Som er matte-språk for å dekke et plan med repeterende bilder som dekker planet
+              fullstendig.
+            </p>
+          </div>
+        </section>
+        <section class="center">
+          <div>
+            <figure>
+              <img width="600" src="src/img/escher-fish.png" alt="Escher Fish" />
+              <figcaption>En approksimasjon av M. C. Eschers Square Limit</figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="standard">
+          <h2>Konkatenativ Geometri</h2>
+          <div>
+            <p>
+              Artikkelen nevner tre grunnleggende operasjoner: <code>flip</code>,
+              <code>turn</code> og <code>rot45/toss</code>.
+            </p>
+            <p class="fragment">
+              I tillegg nevner artikkelen operasjonen <code>over</code>, som grupperer figurer som
+              hører til den samme boksen. Den operasjonen kommer vi ikke til å trenge.
+            </p>
+          </div>
+        </section>
+        <!-- Konkatenativ Geometri: flip -->
+        <section class="center">
+          <h3>Flip</h3>
+        </section>
+        <section>
+          <ait-slide demo="flip">
+            <div class="editor"></div>
+            <div class="display canvas"></div>
+          </ait-slide>
+        </section>
+        <!-- Konkatenativ Geometri: turn -->
+        <section class="center">
+          <h3>Turn</h3>
+        </section>
+        <section>
+          <ait-slide demo="turn">
+            <div class="editor"></div>
+            <div class="display canvas"></div>
+          </ait-slide>
+        </section>
+        <!-- Konkatenativ Geometri: toss -->
+        <section class="center">
+          <h3>Toss</h3>
+        </section>
+        <section>
+          <ait-slide demo="toss">
+            <div class="editor"></div>
+            <div class="display canvas"></div>
+          </ait-slide>
+        </section>
+        <!-- Konkatenativ Geometri: tiles -->
+        <section class="standard">
+          <h2>Konkatenativ Geometri</h2>
+          <div>
+            <p>
+              Videre nevner artikkelen to måter å konstruere tesselleringsfliser:
+              <code>ttile</code> og
+              <code>utile</code>
+            </p>
+            <div class="fragment">
+              <p class="no-margin-bottom"><code>ttile</code> er ganske enkelt definert som:</p>
+              <p></p>
+              <pre><code data-trim data-noescape data-line-numbers>
+                over(draw, over(flip(toss(draw)), turn(turn(turn(draw)))))
+              </code></pre>
+            </div>
+            <div class="fragment">
+              <p class="no-margin-bottom">og <code>utile</code> som:</p>
+              <p></p>
+              <pre><code data-trim data-noescape data-line-numbers>
+                over(
+                  over(flip(toss(draw)),
+                       turn(flip(toss(draw)))),
+                  over(turn(turn(flip(toss(draw)))),
+                       turn(turn(turn(flip(toss(draw)))))))
+              </code></pre>
+            </div>
+          </div>
+        </section>
+        <section>
+          <ait-slide demo="tiles">
+            <div class="editor"></div>
+            <div class="display canvas"></div>
+          </ait-slide>
+        </section>
+        <!-- Konkatenativ Geometri: tesselation -->
+        <section class="standard">
+          <h2>Konkatenativ Geometri</h2>
+          <div>
+            <p>Nå har vi alle bitene vi trenger for å konstruere den endelige tesselleringen.</p>
+            <p class="fragment">
+              Vi deler planet inn i et <code>3x3</code> grid og fyller hver celle i det gridet med
+              en flis slik at de til sammen dekker hele canvaset.
+            </p>
+          </div>
+        </section>
+        <section>
+          <ait-slide demo="tesselation">
+            <div class="editor"></div>
+            <div class="display canvas"></div>
+          </ait-slide>
+        </section>
+        <section class="center">
           <h2>Nysgjerrig?</h2>
           <div class="fragment">
             <p><a href="https://concatenative.org">concatenative.org</a></p>
@@ -1188,7 +1325,7 @@
             <p class="small">
               slides:
               <a
-                href="https://mollerse.github.io/programming-minimalism-presentation/dist/tdc2024/index.html"
+                href="https://mollerse.github.io/programming-minimalism-presentation/dist/fagprog2024/index.html"
                 >github/mollerse/programming-minimalism-presentation</a
               >
             </p>

@@ -13,10 +13,10 @@ PI/4: PI 4 / ;
 # Shapes
 box:
   beginPath
-  [0 0] moveTo
-  [200 0] lineTo
-  [200 200] lineTo
-  [0 200] lineTo
+  0 0 moveTo
+  0 200 lineTo
+  200 200 lineTo
+  200 0 lineTo
   closePath
   stroke
 ;
@@ -24,16 +24,16 @@ box:
 letterF:
   50 25 translate
   beginPath
-  [0 0] moveTo
-  [100 0] lineTo
-  [100 20] lineTo
-  [20 20] lineTo
-  [20 60] lineTo
-  [80 60] lineTo
-  [80 80] lineTo
-  [20 80] lineTo
-  [20 150] lineTo
-  [0 150] lineTo
+  0 0 moveTo
+  0 100 lineTo
+  20 100 lineTo
+  20 20 lineTo
+  60 20 lineTo
+  60 80 lineTo
+  80 80 lineTo
+  80 20 lineTo
+  150 20 lineTo
+  150 0 lineTo
   closePath
   stroke
 ;
