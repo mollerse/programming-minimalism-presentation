@@ -27,7 +27,7 @@ npm start
 
 ## View online
 
-Most recent version: [Faggruppe Programering NRK](https://mollerse.github.io/programming-minimalism-presentation/dist/fagprog2024/index.html)
+Most recent version: [Faggruppe Programering NRK [NO]](https://mollerse.github.io/programming-minimalism-presentation/dist/fagprog2024/index.html)
 
 Older versions:
 
